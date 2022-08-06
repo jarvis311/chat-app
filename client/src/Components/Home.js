@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Navigate } from 'react-router-dom';
 import io from 'socket.io-client'
 import '../style/home.css'
 import Chat from './Chat';
@@ -13,8 +14,10 @@ const Home = () => {
 
   const joinRoom = () => {
     if ((username !== "" && username.length > 3) && group !== "") {
-      socket.emit("join_group", group);
+      const g = socket.emit("join_group", group);
+      console.log(g);
       setShowChat(true);
+      Navigate('/chatroom')
     } else {
       setError('Username and Group are required, and username must be at least 3 character ')
     }

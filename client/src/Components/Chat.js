@@ -67,7 +67,7 @@ const Chat = ({ socket, username, group }) => {
             event.key === "Enter" && sendMessage();
           }}
         />
-        <button onClick={sendMessage}><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+        <button onClick={sendMessage}><i className="fa fa-paper-plane" aria-hidden="true"></i></button>
       </div>
     </div>
   )
